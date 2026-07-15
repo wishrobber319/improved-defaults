@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ModMetaData>
+    <packageId>wishRobber.improveddefaults</packageId>
+    <name>Improved Defaults</name>
+    <author>wishRobber</author>
+    <description>Presets the choices on the new-game setup screens so you don't have to click through the same options every time:
+
+- Choose Scenario opens with Medieval Overhaul's "Battle Brothers" at the top of the list and pre-selected (instead of Crashlanded).
+- Choose AI Storyteller defaults to The Antagonist (falls back to Cassandra if that storyteller mod isn't loaded), difficulty "Blood and dust", Reload anytime mode, and Anomaly incidents disabled.
+
+Everything is still fully changeable on the screens - this only sets the starting selection. Each piece degrades gracefully: if Medieval Overhaul isn't loaded the scenario tweak no-ops, and the Anomaly default is skipped without the Anomaly DLC.</description>
+    <supportedVersions>
+        <li>1.6</li>
+    </supportedVersions>
+    <modDependencies>
+        <li>
+            <packageId>brrainz.harmony</packageId>
+            <displayName>Harmony</displayName>
+            <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+        </li>
+        <li>
+            <packageId>OskarPotocki.VFE.Medieval2</packageId>
+            <displayName>Vanilla Factions Expanded - Medieval 2</displayName>
+            <steamWorkshopUrl>steam://url/CommunityFilePage/3444347874</steamWorkshopUrl>
+        </li>
+        <li>
+            <packageId>DankPyon.Medieval.Overhaul</packageId>
+            <displayName>Medieval Overhaul</displayName>
+            <steamWorkshopUrl>steam://url/CommunityFilePage/3219596926</steamWorkshopUrl>
+        </li>
+    </modDependencies>
+    <loadAfter>
+        <li>brrainz.harmony</li>
+        <li>OskarPotocki.VFE.Medieval2</li>
+        <li>DankPyon.Medieval.Overhaul</li>
+        <li>wishRobber.theantagonist</li>
+    </loadAfter>
+</ModMetaData>
