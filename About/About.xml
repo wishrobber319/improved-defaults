@@ -19,6 +19,8 @@ What it presets:
 - Apparel policy: default "Anything" drops tainted apparel and the King's crown, and sets a 51-100% hit-points range.
 - Work priorities: Manual priorities turned ON, with a full set of sensible per-colonist default priorities that scale with each pawn's passions (burning, interested, none).
 
+Plus a Medieval Overhaul quality-of-life fix: silkworms are moved out of the food category and into Textiles, so colonists stop cooking and eating the silkworms you need to produce silk (silk production is unaffected).
+
 Plays nicely with Prepare Carefully, Colony Manager Redux, FSF Complex Jobs, Vanilla Factions Expanded - Medieval 2, Medieval Overhaul and the Anomaly DLC. Every preset degrades gracefully - if a mod or DLC is missing, that piece simply no-ops.
 
 Save-friendly: presets only apply to new games and newly created colonists, so existing saves are never touched. Lightweight Harmony patches on the setup screens and pawn initialization - no new items, no def bloat, safe to add mid-playthrough.</description>

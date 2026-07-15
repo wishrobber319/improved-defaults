@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <!-- Stop Medieval Overhaul's silkworms being eaten. MO puts DankPyon_Silkworm in the FoodRaw thing
+         category, and every cooking/meal recipe accepts ingredients by that category - so colonists
+         happily cook and eat the silkworms you need to produce silk. Move the silkworm out of FoodRaw and
+         into Textiles (alongside its product, silk), so no food recipe will accept it and it won't be
+         eaten. Silk production is unaffected: MO's silk processor (DankPyon_SilkwormIntoSilk) consumes
+         silkworms by defName, not by category. RoughPlantBase (the parent) adds no category of its own,
+         so this leaves the silkworm cleanly in Textiles only. -->
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Medieval Overhaul</li>
+        </mods>
+        <match Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="DankPyon_Silkworm"]/thingCategories/li[text()="FoodRaw"]</xpath>
+            <value>
+                <li>Textiles</li>
+            </value>
+        </match>
+    </Operation>
+</Patch>
