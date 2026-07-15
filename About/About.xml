@@ -3,12 +3,25 @@
     <packageId>wishRobber.improveddefaults</packageId>
     <name>Improved Defaults</name>
     <author>wishRobber</author>
-    <description>Presets the choices on the new-game setup screens so you don't have to click through the same options every time:
+    <description>Tired of clicking through the same choices on every new RimWorld colony? Improved Defaults is a quality-of-life (QoL) mod that auto-configures the whole new-game setup - scenario, AI storyteller, difficulty, world generation, colonist policies and work priorities - to exactly how you like it, the instant each screen opens. Stop repeating yourself and start playing faster.
 
-- Choose Scenario opens with Medieval Overhaul's "Battle Brothers" at the top of the list and pre-selected (instead of Crashlanded).
-- Choose AI Storyteller defaults to The Antagonist (falls back to Cassandra if that storyteller mod isn't loaded), difficulty "Blood and dust", Reload anytime mode, and Anomaly incidents disabled.
+Every option stays fully editable; this only changes the starting selection. Nothing is forced.
 
-Everything is still fully changeable on the screens - this only sets the starting selection. Each piece degrades gracefully: if Medieval Overhaul isn't loaded the scenario tweak no-ops, and the Anomaly default is skipped without the Anomaly DLC.</description>
+What it presets:
+- Scenario select: opens on Medieval Overhaul's "Battle Brothers", pre-selected and moved to the top of the list, instead of Crashlanded.
+- AI storyteller: The Antagonist (falls back to Cassandra Classic if that storyteller mod is missing), with difficulty "Blood and dust", Reload anytime mode, and Anomaly incidents disabled.
+- Create World: population, landmark density, pollution, a 325x325 map size, and a custom faction line-up.
+- Colonist schedule: Recreation set at hours 6 and 21 on the default timetable.
+- Hostility response: Attack instead of Flee.
+- Carry / inventory stock: Healroot x3 for auto-medicine hauling.
+- Reading policy: Tomes disabled in the default "Anything" policy.
+- Food policy: a trimmed default "Lavish" - no rotten, human-meat or insect-meat food, with several categories switched off and sensible exceptions kept.
+- Apparel policy: default "Anything" drops tainted apparel and the King's crown, and sets a 51-100% hit-points range.
+- Work priorities: Manual priorities turned ON, with a full set of sensible per-colonist default priorities that scale with each pawn's passions (burning, interested, none).
+
+Plays nicely with Prepare Carefully, Colony Manager Redux, FSF Complex Jobs, Vanilla Factions Expanded - Medieval 2, Medieval Overhaul and the Anomaly DLC. Every preset degrades gracefully - if a mod or DLC is missing, that piece simply no-ops.
+
+Save-friendly: presets only apply to new games and newly created colonists, so existing saves are never touched. Lightweight Harmony patches on the setup screens and pawn initialization - no new items, no def bloat, safe to add mid-playthrough.</description>
     <supportedVersions>
         <li>1.6</li>
     </supportedVersions>
