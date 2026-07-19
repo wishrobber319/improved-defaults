@@ -24,7 +24,10 @@ namespace ImprovedDefaults
     public static class Patch_Page_CreateWorldParams_Reset
     {
         private const int TargetMapSize = 325;
+        private const float TargetPlanetCoverage = 0.3f; // 30% (valid options are 0.3, 0.5, 1.0)
 
+        private static readonly FieldInfo PlanetCoverageField =
+            AccessTools.Field(typeof(Page_CreateWorldParams), "planetCoverage");
         private static readonly FieldInfo PopulationField =
             AccessTools.Field(typeof(Page_CreateWorldParams), "population");
         private static readonly FieldInfo LandmarkDensityField =
@@ -34,6 +37,9 @@ namespace ImprovedDefaults
 
         public static void Postfix(Page_CreateWorldParams __instance)
         {
+            // Globe coverage: default is 0.5 (50%) with Odyssey active; drop to 0.3 (30%).
+            PlanetCoverageField?.SetValue(__instance, TargetPlanetCoverage);
+
             // Sliders are 0..(count-1); "5/7" and "6/7" are the 5th and 6th of 7 notches.
             PopulationField?.SetValue(__instance, OverallPopulation.LittleBitMore);   // 5/7
             LandmarkDensityField?.SetValue(__instance, LandmarkDensity.SlightlyMoreCrowded); // 6/7
@@ -107,6 +113,53 @@ namespace ImprovedDefaults
             {
                 initialFactions.Clear();
                 initialFactions.AddRange(factions);
+            }
+        }
+    }
+
+    // Suppress the yellow "Disabling mechanoid hive / insect geneline..." warnings on the Create World
+    // screen. WorldFactionsUIUtility.DoWindowContents prints them whenever those factions aren't in the
+    // list, and we deliberately remove them (medieval - no mechanoid raids or insect infestations), so
+    // the warnings are just noise. We temporarily re-add Mechanoid + Insect for the duration of the draw
+    // so the warning checks (factions.Contains(...)) pass. Both have displayInFactionSelection = false, so
+    // they never render in the faction list, and the finalizer removes them again so world generation
+    // still excludes them (they stay disabled). The finalizer guarantees cleanup even if the draw throws.
+    [HarmonyPatch(typeof(WorldFactionsUIUtility), nameof(WorldFactionsUIUtility.DoWindowContents))]
+    public static class Patch_WorldFactionsUIUtility_SuppressDisabledWarnings
+    {
+        private static readonly List<FactionDef> tempAdded = new List<FactionDef>();
+
+        public static void Prefix(List<FactionDef> factions)
+        {
+            tempAdded.Clear();
+            if (factions == null)
+            {
+                return;
+            }
+
+            TryAddHidden(factions, FactionDefOf.Mechanoid);
+            TryAddHidden(factions, FactionDefOf.Insect);
+        }
+
+        public static void Finalizer(List<FactionDef> factions)
+        {
+            if (factions != null)
+            {
+                for (int i = 0; i < tempAdded.Count; i++)
+                {
+                    factions.Remove(tempAdded[i]);
+                }
+            }
+
+            tempAdded.Clear();
+        }
+
+        private static void TryAddHidden(List<FactionDef> factions, FactionDef def)
+        {
+            if (def != null && !factions.Contains(def))
+            {
+                factions.Add(def);
+                tempAdded.Add(def);
             }
         }
     }

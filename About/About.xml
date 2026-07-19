@@ -10,7 +10,7 @@ Every option stays fully editable; this only changes the starting selection. Not
 What it presets:
 - Scenario select: opens on Medieval Overhaul's "Battle Brothers", pre-selected and moved to the top of the list, instead of Crashlanded.
 - AI storyteller: The Antagonist (falls back to Cassandra Classic if that storyteller mod is missing), with difficulty "Blood and dust", Reload anytime mode, and Anomaly incidents disabled.
-- Create World: population, landmark density, pollution, a 325x325 map size, and a custom faction line-up.
+- Create World: globe coverage, population, landmark density, pollution, a 325x325 map size, and a custom faction line-up.
 - Colonist schedule: Recreation set at hours 6 and 21 on the default timetable.
 - Hostility response: Attack instead of Flee.
 - Carry / inventory stock: Healroot x3 for auto-medicine hauling.
