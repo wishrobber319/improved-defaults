@@ -66,7 +66,14 @@ namespace ImprovedDefaults
         // burning -> 2, interested -> 3, none -> 0 (don't do it).
         private static readonly HashSet<string> PassionOrDisableWork = new HashSet<string>
         {
-            "doctor", "surgeon",
+            "surgeon",
+        };
+
+        // Doctoring is critical, so ANY passion (burning OR interested) tops it out at priority 1;
+        // with no passion it's left disabled (0), same as PassionOrDisableWork.
+        private static readonly HashSet<string> PassionTopOrDisableWork = new HashSet<string>
+        {
+            "doctor",
         };
 
         // Applies our default priorities to one pawn's work settings. Returns how many were set.
@@ -96,6 +103,10 @@ namespace ImprovedDefaults
                 if (TargetPriorities.TryGetValue(key, out int flat))
                 {
                     priority = flat;
+                }
+                else if (PassionTopOrDisableWork.Contains(key))
+                {
+                    priority = PriorityForPassionTopOrDisable(pawn.skills?.MaxPassionOfRelevantSkillsFor(work) ?? Passion.None);
                 }
                 else if (PassionOrDisableWork.Contains(key))
                 {
@@ -146,6 +157,12 @@ namespace ImprovedDefaults
                 default:
                     return 0; // no passion -> leave the work off
             }
+        }
+
+        private static int PriorityForPassionTopOrDisable(Passion passion)
+        {
+            // Any passion at all (burning or interested) -> priority 1; no passion -> leave the work off.
+            return passion == Passion.None ? 0 : 1;
         }
     }
 
