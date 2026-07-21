@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Tweak Medieval Overhaul's "Battle Brothers" scenario (ScenarioDef DankPyon_MercenaryStart), which
+    improved-defaults sorts to the top and defaults to:
+      - start with 8 pawns instead of 5, chosen from 16 instead of 8
+      - drop the random starting pet
+      - drop the broken-cart map scatter (the WoodLog scatter is kept)
+      - update the "Five hardened warriors" tagline to "Eight" to match
+    Gated on Medieval Overhaul so the ScenarioDef exists.
+-->
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Medieval Overhaul</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+            <operations>
+
+                <!-- 5 -> 8 starting pawns -->
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ScenarioDef[defName="DankPyon_MercenaryStart"]/scenario/parts/li[@Class="ScenPart_ConfigPage_ConfigureStartingPawns"]/pawnCount</xpath>
+                    <value>
+                        <pawnCount>8</pawnCount>
+                    </value>
+                </li>
+
+                <!-- choose from 8 -> 16 -->
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ScenarioDef[defName="DankPyon_MercenaryStart"]/scenario/parts/li[@Class="ScenPart_ConfigPage_ConfigureStartingPawns"]/pawnChoiceCount</xpath>
+                    <value>
+                        <pawnChoiceCount>16</pawnChoiceCount>
+                    </value>
+                </li>
+
+                <!-- drop the random starting pet -->
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/ScenarioDef[defName="DankPyon_MercenaryStart"]/scenario/parts/li[@Class="ScenPart_StartingAnimal"]</xpath>
+                </li>
+
+                <!-- drop the broken-cart map scatter (keep the WoodLog scatter) -->
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/ScenarioDef[defName="DankPyon_MercenaryStart"]/scenario/parts/li[@Class="ScenPart_ScatterThingsAnywhere"][thingDef="DankPyon_BrokenCart"]</xpath>
+                </li>
+
+                <!-- tagline: Five -> Eight -->
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ScenarioDef[defName="DankPyon_MercenaryStart"]/scenario/summary</xpath>
+                    <value>
+                        <summary>Eight hardened warriors reclaiming their former glory.</summary>
+                    </value>
+                </li>
+
+            </operations>
+        </match>
+    </Operation>
+</Patch>
