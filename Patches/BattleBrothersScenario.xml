@@ -32,6 +32,14 @@
                     </value>
                 </li>
 
+                <!-- starting healroot 20 -> 24 (3 per colonist for 8 pawns) -->
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ScenarioDef[defName="DankPyon_MercenaryStart"]/scenario/parts/li[@Class="ScenPart_StartingThing_Defined"][thingDef="MedicineHerbal"]/count</xpath>
+                    <value>
+                        <count>24</count>
+                    </value>
+                </li>
+
                 <!-- drop the random starting pet -->
                 <li Class="PatchOperationRemove">
                     <xpath>Defs/ScenarioDef[defName="DankPyon_MercenaryStart"]/scenario/parts/li[@Class="ScenPart_StartingAnimal"]</xpath>
