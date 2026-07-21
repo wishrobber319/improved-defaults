@@ -13,6 +13,8 @@ What it presets:
 - Create World: globe coverage, population, landmark density, pollution, a 325x325 map size, and a custom faction line-up.
 - Colonist schedule: Recreation set at hours 6 and 21 on the default timetable.
 - Hostility response: Attack instead of Flee.
+- Self-tend: new pawns default to self-tend ON, so an injured pawn tends its own wounds instead of waiting on a doctor.
+- Home-area toggles: automatic rebuild of destroyed home-area structures turned ON, and automatic home-area expansion around new constructions turned OFF.
 - Carry / inventory stock: Healroot x3 for auto-medicine hauling.
 - Reading policy: Tomes disabled in the default "Anything" policy.
 - Food policy: a trimmed default "Lavish" - no rotten, human-meat or insect-meat food, with several categories switched off and sensible exceptions kept.

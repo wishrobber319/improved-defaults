@@ -7,6 +7,7 @@
 [*][b]World and colony setup.[/b] Presets globe coverage, population, landmarks, pollution, a 325x325 map and a custom faction line-up.
 [*][b]Policies tuned.[/b] Sensible food, apparel and reading policies, an Attack hostility response, a recreation-friendly timetable, and Healroot x3 for auto-medicine hauling.
 [*][b]Smart work priorities.[/b] Manual priorities on, with per-colonist defaults that scale to each pawn's passions.
+[*][b]Sensible play toggles.[/b] New pawns default to self-tend on, destroyed home-area structures auto-rebuild, and the home area stops auto-expanding around every new build.
 [*][b]A silkworm QoL fix.[/b] Moves silkworms into Textiles so colonists stop cooking the worms you need for silk.
 [/list]
 
