@@ -9,6 +9,7 @@
 [*][b]Smart work priorities.[/b] Manual priorities on, with per-colonist defaults that scale to each pawn's passions.
 [*][b]Sensible play toggles.[/b] New pawns default to self-tend on, destroyed home-area structures auto-rebuild, and the home area stops auto-expanding around every new build.
 [*][b]A silkworm QoL fix.[/b] Moves silkworms into Textiles so colonists stop cooking the worms you need for silk.
+[*][b]Planning Extended, plans hidden by default.[/b] If you run Planning Extended, plans start hidden on load instead of visible (still editable; your own setting is kept if you have chosen one).
 [/list]
 
 [hr][/hr]

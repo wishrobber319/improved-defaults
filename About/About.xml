@@ -20,6 +20,7 @@ What it presets:
 - Food policy: a trimmed default "Lavish" - no rotten, human-meat or insect-meat food, with several categories switched off and sensible exceptions kept.
 - Apparel policy: default "Anything" drops tainted apparel and the King's crown, and sets a 51-100% hit-points range.
 - Work priorities: Manual priorities turned ON, with a full set of sensible per-colonist default priorities that scale with each pawn's passions (burning, interested, none).
+- Planning Extended (if installed): plans default to hidden on load instead of visible. Still editable; if you have set that mod's Startup plan visibility yourself, your choice is kept.
 
 Plus a Medieval Overhaul quality-of-life fix: silkworms are moved out of the food category and into Textiles, so colonists stop cooking and eating the silkworms you need to produce silk (silk production is unaffected).
 
