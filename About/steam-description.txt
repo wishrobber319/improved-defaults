@@ -1,0 +1,15 @@
+[b]Stop re-clicking the same new-game setup every time.[/b] Improved Defaults presets the entire new-game flow to how you like it, the instant each screen opens: scenario, storyteller, difficulty, world generation, colonist policies and work priorities. Everything stays fully editable; it only changes the starting selection.
+
+[hr][/hr]
+[b]What's inside[/b]
+[list]
+[*][b]Scenario and storyteller.[/b] Opens on Medieval Overhaul's Battle Brothers, with The Antagonist storyteller, Blood and dust difficulty, Reload anytime, and Anomaly incidents off.
+[*][b]World and colony setup.[/b] Presets globe coverage, population, landmarks, pollution, a 325x325 map and a custom faction line-up.
+[*][b]Policies tuned.[/b] Sensible food, apparel and reading policies, an Attack hostility response, a recreation-friendly timetable, and Healroot x3 for auto-medicine hauling.
+[*][b]Smart work priorities.[/b] Manual priorities on, with per-colonist defaults that scale to each pawn's passions.
+[*][b]A silkworm QoL fix.[/b] Moves silkworms into Textiles so colonists stop cooking the worms you need for silk.
+[/list]
+
+[hr][/hr]
+[b]Safe and graceful[/b]
+Presets only apply to new games and newly created colonists, so existing saves are never touched, and every piece no-ops if its mod or DLC is missing. Lightweight Harmony patches on the setup screens, no new items and no def bloat, safe to add mid-playthrough.
