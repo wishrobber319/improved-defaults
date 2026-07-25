@@ -5,7 +5,9 @@ using Verse;
 namespace ImprovedDefaults
 {
     // Set Isekai RPG Leveling (JellyCreative.IsekaiLeveling) to this collection's progression pace:
-    // XP gain 5x (mod default 3x, the slider's maximum) and 3 skill points per level (mod default 1).
+    // XP gain kept at the mod default 3x (an earlier 5x is undone here - guild contracts now carry the
+    // bonus XP instead, via isekai-guild-patches) and 3 skill points per level (mod default 1). Forcing 3x
+    // rather than just dropping the override ensures a previously-saved 5x in the config doesn't linger.
     //
     // These are machine-local mod settings, so editing the config only changes one PC and does not travel
     // with the modlist. Applying them here bakes the pace into the collection so everyone gets the same one.
@@ -17,7 +19,7 @@ namespace ImprovedDefaults
     [StaticConstructorOnStartup]
     public static class IsekaiDefaultsPatch
     {
-        private const float XpMultiplier = 5f;      // Isekai default 3, slider range 0.1 - 5
+        private const float XpMultiplier = 3f;      // Isekai default (undoes any lingering 5x); range 0.1 - 5
         private const int SkillPointsPerLevel = 3;  // Isekai default 1, slider range 1 - 5
 
         static IsekaiDefaultsPatch()
